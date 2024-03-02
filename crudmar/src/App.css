@@ -1,0 +1,19 @@
+input {
+    width: 550px;
+    height: 60px;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+textarea {
+    padding: 30px;
+}
+
+
+#subBtn {
+    background-color: rgb(6, 185, 185);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
