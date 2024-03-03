@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import axios from "axios";
-import Postsection from "./components/Postsection";
+import Postsection from "../components/Postsection";
 
 function App() {
   const [postList, setPostList] = useState([]);

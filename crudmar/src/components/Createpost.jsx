@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from "react-router-dom";
 
 const Createpost = ({onAddPost, children}) => {
 
+  const navigate = useNavigate();
         // post.userId, post.title, post.body,post.tags, post.id, post.reactions
   const userIdRef = useRef("");
   const titleRef = useRef("");
@@ -24,6 +26,12 @@ onAddPost(userId,
     tags,
     reations, uuidv4())
 
+    userIdRef.current.value = "";
+titleRef.current.value = "";
+bodyRef.current.value = "";
+tagsRef.current.value = "";
+reationsRef.current.value = "";
+navigate("/post-list");
 // console.log(userId,
 //     title,
 //     body,
