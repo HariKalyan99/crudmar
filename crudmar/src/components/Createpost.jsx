@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
 
-const Createpost = ({onAddPost, children}) => {
+const Createpost = ({onAddPost, show}) => {
 
   const navigate = useNavigate();
         // post.userId, post.title, post.body,post.tags, post.id, post.reactions
@@ -31,6 +31,7 @@ titleRef.current.value = "";
 bodyRef.current.value = "";
 tagsRef.current.value = "";
 reationsRef.current.value = "";
+show("postlist")
 navigate("/post-list");
 // console.log(userId,
 //     title,

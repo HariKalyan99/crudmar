@@ -13,7 +13,7 @@ const Postsection = ({postList, onAddPost, onDeletePost, onEditPost}) => {
     <div style={{display: "flex"}}>
         <Sidebar show={show} whatTodisplay={whatTodisplay}/>
         {whatTodisplay === "postlist" && <Displaypost postList={postList} onDeletePost={onDeletePost} onEditPost={onEditPost}/>}
-        {whatTodisplay === "createpost" && <Createpost onAddPost={onAddPost}/>}
+        {whatTodisplay === "createpost" && <Createpost onAddPost={onAddPost} show={show} whatTodisplay={whatTodisplay}/>}
     </div>
   )
 }
