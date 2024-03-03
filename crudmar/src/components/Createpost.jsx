@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
+import { Crudstore } from "../store/Crudstore";
 
-const Createpost = ({onAddPost, show}) => {
-
+const Createpost = () => {
+  const {onAddPost, show} = useContext(Crudstore);
   const navigate = useNavigate();
         // post.userId, post.title, post.body,post.tags, post.id, post.reactions
   const userIdRef = useRef("");

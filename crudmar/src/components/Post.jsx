@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Editpost from './Editpost';
+import { Crudstore } from '../store/Crudstore';
 
-const Post = ({post, onDeletePost, onEditPost}) => {
+const Post = ({post}) => {
+
+  const {onDeletePost} = useContext(Crudstore);
     const [createPostActive, setCreatePostActive] = useState(false);
   return (
     <div class="col" >
@@ -19,7 +22,7 @@ const Post = ({post, onDeletePost, onEditPost}) => {
               <button onClick={() => setCreatePostActive(!createPostActive)}>Edit Post</button>
 
               <div style={{position: "fixed", zIndex: 2, top: "180px", left: "330px", backgroundColor: "white", width: "80%"}}>
-              {createPostActive && <Editpost postedValues={post} onEditPost={onEditPost} setCreatePostActive={setCreatePostActive} createPostActive={createPostActive}>
+              {createPostActive && <Editpost postedValues={post}  setCreatePostActive={setCreatePostActive} createPostActive={createPostActive}>
                 <button style={{marginBottom: "20px", padding: "10px", border: "none", backgroundColor: "yellowgreen"}} onClick={() => setCreatePostActive(!createPostActive)}>I don't want to change</button>
                 </Editpost>}
               </div>

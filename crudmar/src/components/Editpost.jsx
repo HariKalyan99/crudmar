@@ -1,8 +1,11 @@
-import React, {useState } from "react";
+import React, {useContext, useState } from "react";
+import { Crudstore } from "../store/Crudstore";
 
-const Editpost = ({children, postedValues, onEditPost, setCreatePostActive, createPostActive}) => {
+const Editpost = ({children, postedValues, setCreatePostActive, createPostActive}) => {
 
         // postedValues.userId, postedValues.title, postedValues.body,postedValues.tags, postedValues.id, postedValues.reactions
+
+        const {onEditPost} = useContext(Crudstore);
   const [userIdRef, setuserIdRef] = useState("" || postedValues.userId);
   const [titleRef, settitleRef] = useState("" || postedValues.title);
   const [bodyRef, setbodyRef] = useState("" || postedValues.body);

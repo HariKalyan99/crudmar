@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Sidebar from './Sidebar'
 import Createpost from './Createpost'
 import Displaypost from './Displaypost'
+import { Crudstore } from '../store/Crudstore'
 
-const Postsection = ({postList, onAddPost, onDeletePost, onEditPost}) => {
-  const [whatTodisplay, setWhatToDisplay] = useState("createpost");
+const Postsection = () => {
+  
+  const {whatTodisplay} = useContext(Crudstore);
 
-  const show = (path) => {
-    setWhatToDisplay(path)
-  }
+
+
   return (
     <div style={{display: "flex"}}>
-        <Sidebar show={show} whatTodisplay={whatTodisplay}/>
-        {whatTodisplay === "postlist" && <Displaypost postList={postList} onDeletePost={onDeletePost} onEditPost={onEditPost}/>}
-        {whatTodisplay === "createpost" && <Createpost onAddPost={onAddPost} show={show} whatTodisplay={whatTodisplay}/>}
+        <Sidebar />
+        {whatTodisplay === "postlist" && <Displaypost />}
+        {whatTodisplay === "createpost" && <Createpost  />}
     </div>
   )
 }
